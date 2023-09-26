@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>End-to-End系列変換型声質変換への高速ニューラル波形生成モデル導入の検討</title>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <br>
+      
+      <h2><font color="#FF1493">End-to-End系列変換型声質変換への高速ニューラル波形生成モデル導入の検討</font></h2>
+
+      <hr color="#13A9B8">
+
+      ◎山下陽生(神戸大/NICT) 、岡本拓磨(NICT) 、高島遼一(神戸大) 、大谷大和(NICT) 、滝口哲也(神戸大) 、戸田智基(名大/NICT) 、河井恒(NICT)
+      
+      <hr color="#13A9B8">
+
+        <table>
+                <tbody>
+                <tr>
+                <td>Original</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/original/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+
+        Transformer + HiFi-GAN<br>
+        <table>
+                <tbody>
+                <tr>
+                <td>erf=2, drf=1</td>
+                <td>erf=3, drf=1</td>
+                <td>erf=3, drf=2</td>
+                <td>erf=4, drf=1</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/hifigan/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/istft/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/ms/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/fc/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+	
+        <table>
+                <tbody>
+                <tr>
+                <td>erf=4, drf=2</td>
+                <td>erf=4, drf=3</td>
+                <td>erf=8, drf=1</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/ms_istft/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/ms_fc/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs003/ms_fc/jvs003_BASIC5000_0615_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+        <br> 
+
+        Transformer + MS-iSTFT-HiFiGAN<br>
+
+        <table>
+                <tbody>
+                <tr>
+                <td>erf=2, drf=!</td>
+                <td>erf=3, drf=1</td>
+                <td>erf=4, drf=1</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/hifigan/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/istft/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/ms/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+
+        <br> 
+
+        Transformer + MS-FC-HiFiGAN<br>
+
+        <table>
+                <tbody>
+                <tr>
+                <td>erf=2, drf=!</td>
+                <td>erf=3, drf=1</td>
+                <td>erf=4, drf=1</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/hifigan/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/istft/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/ms/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+
+        <br> 
+
+	E-Branchformer + HiFi-GAN<br>      
+        <table>
+                <tbody>
+                <tr>
+                <td>erf=2, drf=!</td>
+                <td>erf=3, drf=1</td>
+                <td>erf=4, drf=1</td>
+                </tr>
+                <tr>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/hifigan/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/istft/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                <td><audio controls="" ><source src="wav/jvs/jvs008/ms/jvs008_BASIC5000_1722_gen.wav"/></audio></td>
+                </tr>
+                </tbody>
+        </table>
+
+        
